@@ -71,7 +71,8 @@ Mengacu pada `GEMINI.md`:
 ## 6. Fitur Keamanan & Integritas
 - **Sanitasi Data:** NIK/No KK dibersihkan dari karakter non-angka sebelum simpan.
 - **Audit Trail:** Mencatat `device_info`, `timestamp`, dan `action` untuk setiap perubahan data.
-- **Session:** Token JWT disimpan di `Encrypted Shared Preferences` (jika memungkinkan) atau Secure Storage.
+- **Soft Delete (Trash System):** Menghapus data di aplikasi mobile tidak akan langsung menghilangkan data di database utama. Data akan dipindahkan ke tabel `local_trash` dalam format JSON, memungkinkan fitur 'Undo' di HP sebelum sinkronisasi permanen ke server.
+- **Session:** Token JWT disimpan di Secure Storage.
 
 ---
 
